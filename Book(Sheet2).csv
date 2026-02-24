@@ -1,0 +1,785 @@
+School LMS,,,,
+Admin Matrix (organization),,,,
+Feature,Basic,Premium,Premium Plus,
+Academic year & board configuration,?,?,?,"What it is
+System-level setup of:
+1. Academic year (start/end)
+2. Term structure (Term 1, Term 2, etc.)
+3. Education board (CBSE / ICSE / State / IB)
+4. Board-specific grading logic
+Why it matters
+All scheduling, grading, and reporting depend on it.
+Report cards differ by board format.
+Attendance/assessment weightage varies by regulation.
+Strategic value
+Enables:
+1. Multi-board schools
+2. Board-compliant exports
+3. Scalable deployment across school chains"
+Grade/section setup,?,?,?,"What it is
+Configuration of:
+1. Grades (Grade 1–12)
+2. Sections (A, B, C)
+3. Student allocation
+4. Teacher assignment
+Why it matters
+Everything in a school is section-based.
+Controls permissions and analytics segmentation.
+Strategic value
+Supports:
+1. Cohort comparisons
+2. Promotion to next grade
+3. Transfer workflows"
+Timetable & bell schedule,?,?,?,"What it is
+Digital representation of:
+1. Period structure
+2. Subject timing
+3. Teacher assignment
+4. Working days / holidays
+Why it matters
+1. Automates attendance.
+2. Powers teacher dashboards.
+3. Prevents scheduling conflicts.
+Strategic value
+Enables:
+1. Real-time class snapshots
+2. Daily engagement analytics
+3. Auto reminders"
+Subject mapping to syllabus,?,?,?,"What it is
+Mapping school subjects to:
+1. Board syllabus chapters
+2. Learning objectives
+3. Term plans
+Why it matters
+1. Aligns lesson plans with board expectations.
+2. Supports outcome tracking.
+Strategic value
+Enables:
+1. Mastery heatmaps
+2. AI lesson alignment
+3. Accreditation-ready reporting"
+Role-based access control,?,?,?,"What it is
+Granular permission control for:
+1. Admin
+2. Teacher
+3. Student
+4. Parent
+Why it matters
+1. Data privacy (especially minors).
+2. Prevents unauthorized grade edits.
+3. Restricts sensitive information.
+Strategic value
+Mandatory for compliance + scalable governance."
+Bulk user import,?,?,?,"What it is
+CSV/API import for:
+1. Students
+2. Teachers
+3. Parents
+4. Sections
+Why it matters
+1. Schools cannot manually create 2,000 accounts.
+Strategic value
+1. Reduces onboarding friction ? Faster adoption."
+Parent-child linking,?,?,?,"What it is
+One parent account linked to:
+1. One or multiple children
+2. Guardian type classification
+Why it matters
+1. Essential for K–12.
+2. Parents monitor progress, not students alone.
+Strategic value
+Enables:
+1. Parent dashboards
+2. AI parent assistant
+3. Attendance alerts"
+School-wide dashboard,?,?,?,"What it is
+Aggregated view of:
+1. Academic performance
+2. Engagement metrics
+3. Attendance trends
+4. AI usage
+Why it matters
+1. Principal-level visibility.
+Strategic value
+1. Transforms LMS into decision-support system."
+Cohort comparisons,Basic view,Detailed,Advanced analytics,"What it is
+Compare:
+1. Section vs section
+2. Teacher vs teacher
+3. Term vs term
+Why it matters
+Identifies:
+1. Weak classes
+2. Teaching inconsistencies
+3. Intervention needs
+Strategic value
+Enables data-driven school improvement."
+AI usage policy control,?,?,?,"What it is
+Admin sets:
+1. Which AI tools are allowed
+2. Grade-wise restrictions
+3. Usage limits
+Why it matters
+1. AI must be age-appropriate in schools.
+Strategic value
+1. Prevents misuse and regulatory issues."
+AI guardrails (restricted topics),?,?,?,"What it is
+AI filters:
+1. Unsafe topics
+2. Inappropriate language
+3. Non-age-appropriate answers
+Why it matters
+1. Critical in K–12 environment.
+Strategic value
+1. Safety-first positioning vs generic AI tools."
+AI audit logs,?,?,?,"What it is
+Logs:
+1. Who asked what
+2. AI response
+3. Timestamp
+4. Content source
+Why it matters
+1. Transparency
+2. Misuse investigation
+3. Parent trust
+Strategic value
+1. Compliance + accountability layer."
+AI anomaly detection,?,?,?,"What it is
+Detects:
+1. Unusual AI usage spikes
+2. Mass AI dependency
+3. Suspicious patterns
+Why it matters
+1. Prevents over-dependence and misuse.
+Strategic value
+1. Proactive governance."
+AI credit quota per class,?,?,?,"What it is
+Admin allocates:
+1. AI usage budget per class
+2. Per teacher limits
+Why it matters
+1. Controls cost.
+Strategic value
+1. Financial sustainability + transparency."
+School AI health score,?,?,?,"What it is
+Composite score based on:
+1. Engagement
+2. Mastery
+3. AI usage balance
+4. Risk flags
+Why it matters
+1. Gives school a measurable “digital maturity” index.
+Strategic value
+1. Premium analytics differentiator."
+Scheduled analytics reports,?,?,?,"What it is
+Automated weekly/monthly reports emailed to:
+1. Principal
+2. Coordinators
+Why it matters
+1. Admins don’t log in daily.
+Strategic value
+1. Improves leadership engagement"
+Cross-grade performance modeling,?,?,?,"What it is
+Track learning progression from:
+Grade 3 ? Grade 4 ? Grade 5 etc.
+Why it matters
+Identifies:
+1. Long-term gaps
+2. Curriculum weaknesses
+Strategic value
+Transforms LMS into longitudinal analytics platform."
+Compliance export reports,Basic,Advanced,Full audit export,"What it is
+Export:
+1. Student data logs
+2. Consent records
+3. AI usage logs
+4. Audit trails
+Why it matters
+Required during:
+1. Inspections
+2. Data audits
+3. Legal disputes
+Strategic value
+Enterprise readiness."
+Content moderation AI (text),?,?,?,"What it is
+Detects:
+1. Inappropriate language
+2. Plagiarism
+3. Harmful content
+In:
+1. Assignments
+2. Teacher uploads
+3. Chat messages
+Why it matters
+1. Child safety.
+Strategic value
+Mandatory safety net in modern K–12."
+Content moderation AI (image),?,?,?,"What it is
+Scans:
+1. Uploaded homework photos
+2.Worksheets
+3. Profile pictures
+For:
+1. Unsafe imagery
+2. Violent or explicit content
+Why it matters
+Critical child protection feature.
+Strategic value
+Very strong differentiator vs basic LMS."
+,,,,
+,,,,
+Teachers Matrix,,,,
+Feature,Basic,Premium,Premium Plus,
+Teacher dashboard,?,?,?,"What it is
+A real-time control center showing:
+1. Today’s classes
+2. Pending grading
+3. Homework submissions
+4. At-risk students
+5. AI insights
+Why it matters
+Teachers don’t have time to navigate multiple menus.
+This gives situational awareness in 10 seconds.
+Strategic value
+Improves daily adoption. Without a strong dashboard, LMS becomes underused."
+Class/section management,?,?,?,"What it is
+View and manage:
+1. Student roster
+2. Performance history
+3. Attendance trends
+4. Sub-groups within class
+Why it matters
+Teachers need differentiated instruction (slow learners vs advanced learners).
+Strategic value
+Supports adaptive teaching and targeted intervention."
+Lesson planner (manual),?,?,?,"What it is
+Structured lesson creation aligned with:
+1. Chapter
+2. Learning objective
+3. Bloom’s taxonomy
+3. Weekly schedule
+Why it matters
+Schools demand standardized lesson planning.
+Strategic value
+Makes LMS an instructional planning tool — not just content storage."
+AI lesson builder,1/day,3/day,Unlimited,"What it is
+AI generates:
+1. Lesson outlines
+2. Key explanations
+3. Age-appropriate summaries
+4. Examples
+Based on topic or uploaded material.
+Why it matters
+Reduces preparation time dramatically.
+Strategic value
+Huge time-saver ? high teacher retention feature."
+Slide generation,?,2/day,Unlimited,"What it is
+Auto-generates structured PPT-style slides from:
+1. Lesson plan
+2. Topic input
+3. PDF upload
+Why it matters
+Teachers spend hours preparing slides.
+Strategic value
+Direct productivity multiplier."
+Worksheet generation,2/day,Unlimited,Unlimited,"What it is
+AI creates:
+1. Practice sheets
+2. Differentiated worksheets
+3. Homework sets
+Why it matters
+Manual worksheet creation is repetitive and time-consuming.
+Strategic value
+Scales homework preparation efficiently."
+Quiz creation (manual),?,?,?,"What it is
+Teacher manually creates:
+1. MCQs
+2. Short answer
+3. Case-based questions
+Why it matters
+Some teachers prefer full control.
+Strategic value
+Maintains pedagogical flexibility."
+AI quiz generation,1/day,5/day,Unlimited,"What it is
+AI generates quizzes based on:
+1. Chapter
+2. Difficulty
+3. Skill level
+4. Bloom’s taxonomy
+Why it matters
+Quick assessment preparation.
+Strategic value
+High perceived “AI-powered school” value."
+Question bank,?,?,?,"What it is
+Reusable tagged question repository.
+Why it matters
+Prevents repeated question creation.
+Strategic value
+Builds institutional knowledge over time."
+Assignment creation,?,?,?,"What it is
+Create:
+1. Homework
+2. Projects
+3. File uploads
+4. Subjective tasks
+Why it matters
+Core LMS function.
+Strategic value
+Enables paperless classroom."
+Bulk grading,?,?,?,"What it is
+Grade multiple submissions in a single interface.
+Why it matters
+Teachers handle 30–50 students per class.
+Strategic value
+Improves grading efficiency."
+AI grading assist,100/month,200/month,Unlimited*,"What it is
+AI suggests:
+1. Marks
+2. Concept coverage
+3. Keyword matching
+Teacher has override control.
+Why it matters
+Reduces grading fatigue.
+Strategic value
+Strong AI differentiation while keeping teacher authority."
+Rubric-based evaluation,?,?,?,"What it is
+Structured marking based on:
+1. Predefined criteria
+2. Partial credit logic
+Why it matters
+Improves fairness and transparency.
+Strategic value
+Professionalizes school assessment process."
+AI comment suggestion,?,?,?,"What it is
+AI drafts qualitative feedback comments.
+Why it matters
+Teachers struggle writing detailed remarks for 40 students.
+Strategic value
+Speeds up report card preparation."
+AI co-teacher scripts,?,?,?,"What it is
+AI generates:
+1. Alternative teaching explanation
+2. Blackboard script
+3. Age-based analogies
+Why it matters
+Helps teachers explain complex topics better.
+Strategic value
+Improves classroom effectiveness."
+Alternative explanation generator,?,?,?,"What it is
+AI rephrases lesson in different formats:
+1. Simpler language
+2. Story format
+3. Real-life example
+Why it matters
+Students learn differently.
+Strategic value
+Supports inclusive learning."
+Confusion heatmap,?,?,?,"What it is
+AI identifies:
+1. Most-missed questions
+2. Weak chapters
+3. Concept clusters
+Why it matters
+Teachers can reteach weak areas.
+Strategic value
+Data-driven remediation."
+At-risk alerts,?,?,?,"What it is
+AI flags students with:
+1. Low participation
+2. Repeated low scores
+3. Attendance issues
+Why it matters
+Early intervention prevents academic decline.
+Strategic value
+Transforms LMS into early warning system."
+Predictive performance modeling,?,?,?,"What it is
+AI predicts likely:
+1. Term grades
+2. Concept mastery trajectory
+Why it matters
+Proactive intervention.
+Strategic value
+Premium intelligence layer."
+Live class hosting,20 hrs/month,60 hrs/month,150 hrs/month,"What it is
+Teacher can:
+1. Conduct live session
+2. Share screen
+3. Record class
+Why it matters
+Hybrid learning support.
+Strategic value
+Competes with Zoom/Google Meet."
+Live polls during class,?,?,?,"What it is
+Quick in-session polls for engagement.
+Why it matters
+Maintains attention.
+Strategic value
+Interactive classroom."
+Live quiz mode,?,?,?,"What it is
+Conduct timed quiz during live class.
+Why it matters
+Immediate comprehension check.
+Strategic value
+Improves engagement metrics."
+Discussion board,?,?,?,"What it is
+Thread-based Q&A within class.
+Why it matters
+Encourages peer learning.
+Strategic value
+Builds academic community."
+AI-assisted parent communication,?,?,?,"What it is
+AI drafts:
+1. Homework reminders
+2. Performance alerts
+3. PTM summaries
+Why it matters
+Teachers spend time drafting repetitive messages.
+Strategic value
+Professional communication with minimal effort."
+Professional growth dashboard,?,?,?,"What it is
+Displays:
+1. Engagement metrics
+2. Content effectiveness
+3. Student feedback
+Why it matters
+Helps teachers improve performance.
+Strategic value
+Positions LMS as teacher development tool."
+Teacher performance analytics,Basic,Detailed,Advanced,"What it is
+Analytics on:
+1. Student outcomes
+2. Engagement rates
+3. Assessment difficulty
+Why it matters
+Identifies teaching effectiveness trends.
+Strategic value
+Premium insight for school leadership."
+,,,,
+,,,,
+Student Matrix,,,,
+Feature,Basic,Premium,Premium Plus,
+Student dashboard,?,?,?,"What it is
+Personalized home screen showing:
+1. Today’s lessons
+2. Pending homework
+3. Upcoming exams
+4. AI suggestions
+5. Progress summary
+Why it matters
+Students need clarity and direction. Without structure, LMS becomes overwhelming.
+Strategic value
+Improves daily engagement and retention."
+Lesson access (text/video/PDF),?,?,?,"What it is
+Structured access to:
+1. Chapters ? Topics ? Lessons
+2. Teacher notes
+3. Videos
+4. Downloadable PDFs
+Why it matters
+Centralizes learning materials.
+Strategic value
+Makes LMS the primary learning hub."
+Bookmark & notes,?,?,?,"What it is
+Students can:
+1. Bookmark lessons
+2. Highlight content
+3. Save personal notes
+Why it matters
+Encourages active learning.
+Strategic value
+Creates personal learning ownership."
+Assignment submission,?,?,?,"What it is
+Submit:
+1. Typed answers
+2. File uploads
+3. Homework photos
+Why it matters
+Core academic workflow.
+Strategic value
+Paperless classroom experience."
+Timed exams,?,?,?,"What it is
+Digital test environment with:
+1. Countdown timer
+2. Question navigation
+3. Auto-save
+Why it matters
+Simulates real exam conditions.
+Strategic value
+Prepares students for board exams."
+Instant objective results,?,?,?,"What it is
+Auto-scoring for MCQs.
+Why it matters
+Immediate feedback improves learning.
+Strategic value
+Enhances student satisfaction."
+Detailed solution view,?,?,?,"What it is
+Students see:
+1. Correct answer
+2. Explanation
+3. Step breakdown (if enabled)
+Why it matters
+Learning happens in review.
+Strategic value
+Supports concept clarity."
+AI Tutor interactions,25/day,40/day,60/day,"What it is
+Students ask doubts and receive AI-generated explanations.
+Why it matters
+Provides 24/7 doubt resolution.
+Strategic value
+Major differentiation vs traditional LMS."
+Max response length,600 tokens,1200 tokens,2500 tokens,"What it is
+Controls how detailed AI responses can be.
+Why it matters
+Short responses = clarity
+Long responses = deeper understanding
+Strategic value
+Helps tier differentiation and cost control."
+Step-by-step solve,Basic math only,All subjects,Advanced reasoning,"What it is
+AI breaks complex problems into logical steps.
+Why it matters
+Critical for math & science mastery.
+Strategic value
+High perceived educational value."
+Flashcard generator,1/day,5/day,Unlimited,"What it is
+Auto-generates revision cards from lessons.
+Why it matters
+Improves memory retention.
+Strategic value
+Supports quick revision workflows."
+Revision planner,1/week,3/week,Unlimited,"What it is
+AI creates study schedules based on:
+1. Upcoming tests
+2. Weak topics
+3. Available time
+Why it matters
+Students struggle with planning.
+Strategic value
+Encourages structured study habits."
+Adaptive AI practice,?,?,? (deep personalization),"What it is
+AI adjusts question difficulty based on performance.
+Why it matters
+Prevents boredom or frustration.
+Strategic value
+Core personalization engine."
+Topic-wise unlimited practice,?,?,?,"What it is
+Students can practice unlimited questions per topic.
+Why it matters
+Repetition builds mastery.
+Strategic value
+Powerful value proposition for parents."
+Mistake repetition engine,?,?,?,"What it is
+AI resurfaces previously incorrect questions.
+Why it matters
+Prevents repeated conceptual errors.
+Strategic value
+Long-term mastery reinforcement."
+Mastery heatmap,Basic,Detailed,Advanced,"What it is
+Visual map showing:
+1. Strong concepts
+2. Weak areas
+3. Progress trends
+Why it matters
+Students understand where to focus.
+Strategic value
+Data-driven learning."
+Risk prediction alerts,?,?,?,"What it is
+AI flags potential:
+1. Academic decline
+2. Low engagement
+3. Repeated failures
+Why it matters
+Early intervention prevents poor results.
+Strategic value
+Powerful parent-facing differentiator."
+Study efficiency score,?,?,?,"What it is
+AI calculates productivity score based on:
+1. Time spent
+2. Accuracy
+3. Improvement rate
+Why it matters
+Encourages effective study habits.
+Strategic value
+Gamified productivity optimization."
+Skill profiling,?,?,?,"What it is
+AI identifies:
+1. Strength areas
+2. Learning preferences
+3. Conceptual style
+Why it matters
+Helps personalize learning path.
+Strategic value
+Advanced premium analytics feature."
+Gamification (XP),?,?,?,"What it is
+Students earn points for:
+1. Practice
+2. Streaks
+3. Completion
+Why it matters
+Increases engagement in younger grades.
+Strategic value
+Retention booster."
+Badges & leaderboard,?,?,?,"What it is
+Achievement system with optional ranking.
+Why it matters
+Motivates competitive students.
+Strategic value
+Enhances platform stickiness."
+Live class participation,?,?,?,"What it is
+Students:
+1. Join live sessions
+2. Raise hand
+3. Chat
+Why it matters
+Supports hybrid classrooms.
+Strategic value
+Increases synchronous engagement."
+Live polls,?,?,?,"What it is
+Quick in-session question prompts.
+Why it matters
+Keeps students attentive.
+Strategic value
+Improves interactivity metrics."
+AI usage transparency dashboard,?,?,?,"What it is
+Displays:
+1. AI queries made
+2. Daily limits used
+3. Usage history
+Why it matters
+Promotes responsible AI usage.
+Strategic value
+Compliance + parental trust feature."
+,,,,
+,,,,
+Parent Mode Matrix,,,,
+Feature,Basic,Premium,Premium Plus,
+Performance summary,?,?,?,"What it is
+A simplified dashboard showing:
+1. Overall average
+2. Subject strengths
+3. Weak areas
+4. Trend (improving / declining)
+5. AI-generated summary in simple language
+Why it matters
+Parents don’t want raw analytics — they want clarity:
+“Is my child doing okay?”
+Strategic value
+Builds confidence and reduces school-office calls."
+Attendance view,?,?,?,"What it is
+Displays:
+1. Daily attendance record
+2. Monthly attendance percentage
+3. Absence history
+4. Late entries (if tracked)
+Why it matters
+Attendance strongly correlates with performance.
+Strategic value
+Creates transparency and accountability."
+Assignment tracking,?,?,?,"What it is
+Shows:
+1. Homework assigned
+2. Submission status
+3. Late submissions
+4. Missing assignments
+Why it matters
+Parents often discover missed homework too late.
+Strategic value
+Encourages responsibility and timely completion."
+Report card download,?,?,?,"What it is
+Access to:
+1. Term reports (PDF)
+2. Grade sheets
+3. Promotion status
+4. Certificates
+Why it matters
+Parents require official documentation.
+Strategic value
+Reduces administrative workload for school."
+Teacher messaging,?,?,?,"What it is
+Secure communication channel between:
+1. Parent ? Teacher
+Includes:
+2. Academic queries
+3. Behavior discussions
+4. PTM scheduling
+Why it matters
+Improves collaboration between home and school.
+Strategic value
+Strengthens school-parent relationship."
+AI progress summary,2/month,Weekly,Unlimited,"What it is
+AI-generated explanation of:
+1. Child’s academic status
+2. Weak areas
+3. Recent improvement
+4. Suggested focus areas
+5. Written in simple, non-technical language.
+Why it matters
+Parents may not understand detailed analytics.
+Strategic value
+Transforms raw data into actionable insight."
+Home study recommendations,?,?,?,"What it is
+AI suggests:
+1. Study schedule
+2. Focus topics
+3. Practice time allocation
+4. Parent support tips
+Why it matters
+Parents often ask:
+“How can I help my child?”
+Strategic value
+Positions LMS as a family support tool."
+Risk alerts,?,?,?,"What it is
+Notifications triggered when:
+1. Grades decline
+2. Attendance drops
+3. Repeated concept failures occur
+4. AI flags academic risk
+Why it matters
+Early intervention prevents long-term academic issues.
+Strategic value
+High emotional impact feature ? strong premium driver."
+AI Parent assistant chatbot,?,?,?,"What it is
+Parent-facing conversational assistant that:
+1. Explains report card
+2. Answers performance questions
+3. Suggests study strategies
+4. Clarifies syllabus
+Why it matters
+Parents may not understand academic terminology.
+Strategic value
+Premium differentiator in K–12 segment."
+Comparative term analysis,?,?,?,"What it is
+Side-by-side comparison:
+1. Term 1 vs Term 2
+2. Previous year vs current year
+3. Subject improvement trends
+Why it matters
+Shows long-term growth instead of isolated scores.
+Strategic value
+Supports data-driven academic discussion in PTMs."
+AI tutor usage log visibility,?,?,?,"What it is
+Parents can see:
+1. How often child used AI tutor
+2. Type of queries asked
+3. AI dependency level
+4. Without exposing private content unnecessarily.
+Why it matters
+Ensures responsible AI use.
+Strategic value
+Builds trust in AI-enabled learning environment."
+AI daily usage restriction control,?,?,?,
+,,,,
+,,,,
+Infrastructure Bundle,,,,
+Feature,Basic,Premium,Premium Plus,
+Storage included,500 GB,1.5 TB,4 TB,
+Live viewer-hours/month,"2,000","8,000","25,000",
+CDN bandwidth,Standard,High,Priority,
+Backup & restore,?,?,?,
+SMS/Email notifications,Limited,Extended,High-volume,
+API access,?,?,?,
+SIS/ERP integration,?,?,?,
+Zoom/Meet integration,?,?,?,
+,,,,
+Overages:,,,,
+Storage: ?10–?15 per GB-month,,,,
+"Live viewer-hours: billed per 1,000 block",,,,
