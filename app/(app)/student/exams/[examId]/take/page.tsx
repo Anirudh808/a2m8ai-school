@@ -85,8 +85,10 @@ export default function ExamTakePage() {
           ...prev, 
           { type: "Tab Switched / Hidden", time: new Date().toLocaleTimeString() }
         ]);
-        setWarningMessage("Warning: Tab switching is recorded as a violation during this exam.");
-        setShowWarningDialog(true);
+				if (violations.length < 3) {
+					setWarningMessage("Warning: Tab switching is recorded as a violation during this exam.");
+					setShowWarningDialog(true);
+				}
       }
     };
 
@@ -157,11 +159,11 @@ export default function ExamTakePage() {
       // Wait for 5 seconds then submit
       const timeout = setTimeout(() => {
         setShowViolationDialog(false);
-        handleSubmit();
-      }, 5000);
+      }, 2000);
+			handleSubmit();
       return () => clearTimeout(timeout);
     }
-  }, [violations, hasStarted, submitting, handleSubmit]);
+  }, [violations, hasStarted, submitting]);
 
   // Anti-Cheat: Disable DevTools and Right Clicks in Production
   useEffect(() => {
