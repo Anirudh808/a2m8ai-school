@@ -100,7 +100,7 @@ export default function StudentAITutorPage() {
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">AI Personal Tutor</h1>
           <p className="text-slate-500 max-w-md mx-auto">
-            Get instant help with your studies. Choose a subject and chapter to focus the AI's knowledge on exactly what you need.
+            Get instant help with your studies. Choose a subject and chapter to focus the AI&apos;s knowledge on exactly what you need.
           </p>
         </div>
 

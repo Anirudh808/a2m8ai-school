@@ -40,7 +40,7 @@ export default function StudentQuizTakePage() {
     if (quiz?.timeLimit && timeLeft === 0) {
       setTimeLeft(quiz.timeLimit * 60);
     }
-  }, [quiz]);
+  }, [quiz?.timeLimit, timeLeft]);
 
   useEffect(() => {
     if (!timeLeft) return;

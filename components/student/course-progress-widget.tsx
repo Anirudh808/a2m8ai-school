@@ -35,12 +35,8 @@ export function CourseProgressWidget({
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (targetClasses.length === 0) {
-    return null; // Don't render if no classes match
-  }
-
-  // Safety bounds
-  const activeClass = targetClasses[currentIndex] || targetClasses[0];
+  // Animation state (must be called unconditionally before early returns)
+  const [animatedProgress, setAnimatedProgress] = useState(0);
 
   // We need to resolve the subject name. In this mock schema, 
   // subject mapping isn't 1:1 in the store easily, so we extract it or fallback to the class string.
@@ -50,14 +46,16 @@ export function CourseProgressWidget({
     sub2: "Language Arts",
     sub3: "Social Studies",
   };
-  const currentSubjectId = isStatic ? subjectId : activeClass.subjectIds[0];
+
+  // Safe to access activeClass here if we conditionally handle it in the calc
+  const activeClass = targetClasses[currentIndex] || targetClasses[0];
+  const currentSubjectId = isStatic ? subjectId : activeClass?.subjectIds[0];
   const displaySubjectName = currentSubjectId ? (subjectNameMap[currentSubjectId] || "Core Subject") : "Core Subject";
 
-
   // Calculate Progress statically for the CURRENT active class in view
-  const assignmentsForClass = store.assignments.filter(
+  const assignmentsForClass = activeClass ? store.assignments.filter(
     (a) => a.classSectionId === activeClass.id && (!currentSubjectId || a.subjectId === currentSubjectId)
-  );
+  ) : [];
   
   const submissionsForClass = store.submissions.filter(
     (s) =>
@@ -75,9 +73,6 @@ export function CourseProgressWidget({
       ? 100 // Safe fallback if no assignments
       : Math.round((completedCount / totalAssignments) * 100);
 
-  // Animation state
-  const [animatedProgress, setAnimatedProgress] = useState(0);
-
   // Reset and animate when the index/class changes
   useEffect(() => {
     setAnimatedProgress(0);
@@ -85,6 +80,10 @@ export function CourseProgressWidget({
     return () => clearTimeout(timeout);
   }, [currentIndex, completionPercentage]);
 
+  if (targetClasses.length === 0 || !activeClass) {
+    return null; // Don't render if no classes match
+  }
+  
   // SVG Configuration for the Circle
   const radius = 64;
   const strokeWidth = 14;

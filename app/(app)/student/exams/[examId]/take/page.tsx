@@ -132,6 +132,15 @@ export default function ExamTakePage() {
     return `${m}:${s.toString().padStart(2, "0")}`;
   };
 
+  const handleSubmit = () => {
+    setSubmitting(true);
+    // Mock submission
+    setTimeout(() => {
+      stopMediaTracks();
+      router.push("/student/exams"); // Redirect back to exams dashboard
+    }, 1500);
+  };
+
   const stopMediaTracks = () => {
     if (mediaStream) {
       mediaStream.getTracks().forEach((track) => {
@@ -152,7 +161,7 @@ export default function ExamTakePage() {
       }, 5000);
       return () => clearTimeout(timeout);
     }
-  }, [violations, hasStarted, submitting]);
+  }, [violations, hasStarted, submitting, handleSubmit]);
 
   // Anti-Cheat: Disable DevTools and Right Clicks in Production
   useEffect(() => {
@@ -190,15 +199,6 @@ export default function ExamTakePage() {
       clearInterval(debuggerTrap);
     };
   }, []);
-
-  const handleSubmit = () => {
-    setSubmitting(true);
-    // Mock submission
-    setTimeout(() => {
-      stopMediaTracks();
-      router.push("/student/exams"); // Redirect back to exams dashboard
-    }, 1500);
-  };
 
   // IF NOT STARTED OR PERMISSIONS NOT GRANTED YET ====================================
   if (!hasStarted || !permissionsGranted) {

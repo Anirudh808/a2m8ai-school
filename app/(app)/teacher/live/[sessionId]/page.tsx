@@ -13,6 +13,7 @@ import {
   Sparkles, Image as ImageIcon, FileText, BookOpen, Maximize, Minimize
 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import Image from "next/image";
 
 export default function TeacherLiveSessionPage() {
   const params = useParams();
@@ -55,7 +56,7 @@ export default function TeacherLiveSessionPage() {
        setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
-  }, [sessionId]);
+  }, [sessionId, store.schedules, store.chapters, store.lessons]);
 
   // Reset indices when lesson changes
   useEffect(() => {
@@ -324,7 +325,14 @@ export default function TeacherLiveSessionPage() {
                           </div>
                           <div className="p-4 overflow-hidden flex items-center justify-center flex-1 bg-slate-100/50 relative">
                              {imageBlocks.length > 0 ? (
-                                <img src={(imageBlocks[imageIndex].data as any).url} alt={(imageBlocks[imageIndex].data as any).alt} className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] rounded-lg shadow-sm border border-slate-200 object-contain mx-auto" />
+                                <div className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] rounded-lg shadow-sm border border-slate-200 object-contain mx-auto overflow-hidden relative">
+                                  <Image 
+                                    src={(imageBlocks[imageIndex].data as any).url} 
+                                    alt={(imageBlocks[imageIndex].data as any).alt} 
+                                    fill
+                                    className="object-contain"
+                                  />
+                                </div>
                              ) : (
                                 <div className="text-center mt-4">
                                    <ImageIcon className="h-10 w-10 text-slate-300 mx-auto mb-2" />
