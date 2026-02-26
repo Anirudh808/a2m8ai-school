@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { CalendarIcon, Clock, ChevronDown, ChevronUp, CheckCircle2, Circle, Sparkles, BookOpen, FileText, PlaySquare, FileSpreadsheet, FileCheck2, Lock, ArrowRight, Activity, Bell, Target, BrainCircuit, PlayCircle, Trophy } from "lucide-react";
 import { format, parseISO, isPast } from "date-fns";
 import { getStore } from "@/lib/store";
+import { CourseProgressWidget } from "@/components/student/course-progress-widget";
 
 type ClientProps = {
   classSectionId: string;
@@ -41,6 +42,7 @@ export function StudentWorkspaceClient({ classSectionId, subjectId, subjectName,
           <TabsTrigger value="syllabus" className="data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 shrink-0">Syllabus & Map</TabsTrigger>
           <TabsTrigger value="schedule" className="data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 shrink-0">Live Classes</TabsTrigger>
           <TabsTrigger value="materials" className="data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 shrink-0">Study Materials</TabsTrigger>
+          <TabsTrigger value="homeworks" className="data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 shrink-0">Homeworks</TabsTrigger>
           <TabsTrigger value="practice" className="data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-700 shrink-0 text-amber-600 data-[state=active]:text-amber-700"><Sparkles className="w-3.5 h-3.5 mr-1.5" /> Self-Practice</TabsTrigger>
         </TabsList>
         <div className="mt-6">
@@ -48,6 +50,7 @@ export function StudentWorkspaceClient({ classSectionId, subjectId, subjectName,
           <TabsContent value="syllabus" className="m-0 outline-none"><StudentSyllabusTab classSectionId={classSectionId} subjectId={subjectId} /></TabsContent>
           <TabsContent value="schedule" className="m-0 outline-none"><StudentScheduleTab classSectionId={classSectionId} subjectId={subjectId} /></TabsContent>
           <TabsContent value="materials" className="m-0 outline-none"><StudentMaterialsTab classSectionId={classSectionId} subjectId={subjectId} /></TabsContent>
+          <TabsContent value="homeworks" className="m-0 outline-none"><StudentHomeworksTab classSectionId={classSectionId} subjectId={subjectId} /></TabsContent>
           <TabsContent value="practice" className="m-0 outline-none"><StudentPracticeTab subjectId={subjectId} /></TabsContent>
         </div>
       </Tabs>
@@ -141,6 +144,9 @@ function StudentOverviewTab({ classSectionId, subjectId }: { classSectionId: str
       {/* Col 3: Sidebars */}
       <div className="space-y-6">
         
+        {/* Course Progress Widget */}
+        <CourseProgressWidget studentId={studentId} classSectionId={classSectionId} subjectId={subjectId} />
+
         {/* Concept Mastery (AI) */}
         <Card className="border-indigo-100 bg-gradient-to-b from-indigo-50/50 to-white overflow-hidden shadow-sm">
            <div className="h-1 w-full bg-gradient-to-r from-indigo-500 to-violet-500"></div>
@@ -439,6 +445,137 @@ function StudentMaterialsTab({ classSectionId, subjectId }: { classSectionId: st
           </div>
         ))
       )}
+    </div>
+  );
+}
+
+function StudentHomeworksTab({ classSectionId, subjectId }: { classSectionId: string; subjectId: string }) {
+  const store = getStore();
+  const studentId = "student1";
+  const [submissions, setSubmissions] = useState(store.submissions.filter(s => s.studentId === studentId));
+  
+  const assignments = store.assignments.filter(a => a.classSectionId === classSectionId && a.subjectId === subjectId);
+
+  const pendingAssignments = assignments.filter(a => {
+    const sub = submissions.find(s => s.assignmentId === a.id);
+    return !sub || sub.status === "PENDING" || sub.status === "LATE";
+  });
+
+  const completedAssignments = assignments.filter(a => {
+    const sub = submissions.find(s => s.assignmentId === a.id);
+    return sub && (sub.status === "SUBMITTED" || sub.status === "GRADED");
+  });
+
+  const handleCompleteHomework = (assignmentId: string) => {
+    const newSubmissionId = `new-sub-${Math.random()}`;
+    const newSubmission: any = {
+      id: newSubmissionId,
+      assignmentId,
+      studentId,
+      status: "SUBMITTED",
+      submittedAt: new Date().toISOString(),
+    };
+
+                       // Update local visual state
+    setSubmissions(prev => [...prev.filter(s => s.assignmentId !== assignmentId), newSubmission]);
+
+    // Update global store
+    store.submissions = store.submissions.filter(s => !(s.assignmentId === assignmentId && s.studentId === studentId));
+    store.submissions.push(newSubmission);
+  };
+
+  return (
+    <div className="space-y-8 max-w-4xl mt-6">
+       
+       {/* Pending Tasks */}
+       <section className="space-y-4">
+         <div className="flex items-center justify-between">
+           <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2 tracking-tight">
+              <FileCheck2 className="w-5 h-5 text-indigo-600" /> Pending Tasks
+           </h3>
+           <Badge variant="secondary" className="bg-rose-100 text-rose-700 hover:bg-rose-200">{pendingAssignments.length} Due</Badge>
+         </div>
+
+         {pendingAssignments.length === 0 ? (
+           <div className="p-8 text-center text-slate-500 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl">
+              <Sparkles className="w-8 h-8 mx-auto mb-3 text-emerald-400" />
+              <p className="font-medium text-slate-700">All caught up!</p>
+              <p className="text-sm mt-1">No pending homework right now.</p>
+           </div>
+         ) : (
+           <div className="grid gap-4">
+             {pendingAssignments.map(a => (
+               <div key={a.id} className="bg-white p-5 rounded-xl border border-slate-200 hover:border-indigo-300 transition-all shadow-sm flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+                  <div className="flex-1">
+                     <div className="flex items-center gap-3 mb-1">
+                        <h4 className="font-semibold text-slate-900 text-lg">{a.title}</h4>
+                        <Badge variant="outline" className="text-xs bg-rose-50 text-rose-700 border-rose-200">Pending</Badge>
+                     </div>
+                     <p className="text-sm text-slate-500 mb-3">{a.description || "No specific instructions provided."}</p>
+                     <div className="flex items-center gap-4 text-xs font-medium text-slate-500">
+                        <span className="flex items-center gap-1.5 px-2 py-1 bg-slate-50 border border-slate-100 rounded-md">
+                           <CalendarIcon className="w-3.5 h-3.5" /> Due: {format(parseISO(a.dueDate), "MMM d, yyyy")}
+                        </span>
+                     </div>
+                  </div>
+                  <Button 
+                    onClick={() => handleCompleteHomework(a.id)}
+                    className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors mt-2 md:mt-0 shrink-0"
+                  >
+                     <CheckCircle2 className="w-4 h-4 mr-2" /> Mark Completed
+                  </Button>
+               </div>
+             ))}
+           </div>
+         )}
+       </section>
+
+       {/* Completed Tasks */}
+       <section className="space-y-4 pt-6 mt-6 border-t border-slate-200">
+         <div className="flex items-center justify-between">
+           <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2 tracking-tight">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500" /> Completed Tasks
+           </h3>
+           <Badge variant="secondary" className="bg-slate-100 text-slate-600 hover:bg-slate-200">{completedAssignments.length} Done</Badge>
+         </div>
+
+         {completedAssignments.length === 0 ? (
+           <div className="p-8 text-center text-slate-500 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl">
+              <p className="text-sm">Completed assignments will appear here.</p>
+           </div>
+         ) : (
+           <div className="grid gap-4 opacity-80 hover:opacity-100 transition-opacity">
+             {completedAssignments.map(a => {
+               const sub = submissions.find(s => s.assignmentId === a.id);
+               return (
+                 <div key={a.id} className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-200 border-l-4 border-l-emerald-500 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+                    <div>
+                       <div className="flex items-center gap-3 mb-1">
+                          <h4 className="font-semibold text-slate-900">{a.title}</h4>
+                          <Badge variant="outline" className={`text-xs ${sub?.status === 'GRADED' ? 'bg-indigo-50 text-indigo-700 border-indigo-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'}`}>
+                            {sub?.status === 'GRADED' ? 'Graded' : 'Submitted'}
+                          </Badge>
+                       </div>
+                       <p className="text-sm text-slate-500 line-clamp-1">{a.description || "No specific instructions provided."}</p>
+                    </div>
+                    <div className="shrink-0 flex items-center gap-4 mt-2 md:mt-0 w-full md:w-auto justify-between md:justify-end">
+                       {sub?.status === 'GRADED' && sub.score && (
+                         <div className="text-right">
+                           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-0.5">Score</span>
+                           <span className="font-bold text-indigo-700 text-lg">{sub.score}/100</span>
+                         </div>
+                       )}
+                       <Button variant="outline" size="sm" className="bg-white border-slate-200 text-slate-700 hover:bg-slate-100 font-semibold">
+                          View Submission
+                       </Button>
+                    </div>
+                 </div>
+               );
+             })}
+           </div>
+         )}
+       </section>
+
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { getStore } from "@/lib/store";
 import { Flame, BookOpen, FileCheck, Calendar, Sparkles, Clock, Presentation, ArrowRight, BrainCircuit, Target, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CourseProgressWidget } from "@/components/student/course-progress-widget";
 
 export default function StudentDashboardPage() {
   const store = getStore();
@@ -209,7 +210,9 @@ export default function StudentDashboardPage() {
 
         {/* Sidebar - AI Insights & Personal Tutor */}
         <div className="md:col-span-3 xl:col-span-2 space-y-6">
-          <h2 className="text-xl font-bold tracking-tight text-slate-900">AI Personal Tutor</h2>
+          <CourseProgressWidget studentId={studentId} />
+
+          <h2 className="text-xl font-bold tracking-tight text-slate-900 mt-8">AI Personal Tutor</h2>
           
           <Card className="border-violet-100 bg-gradient-to-b from-violet-50/50 to-white shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
